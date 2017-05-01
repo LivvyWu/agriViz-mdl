@@ -1,0 +1,39 @@
+<div [formGroup]="traceForm" *ngIf="cardToggle">
+  <!--參考網址: https://github.com/basvandenberg/ng-select-->
+  <div class="form-group col-xs-12">
+    <ng-select
+      [options]="options"
+      placeholder="請選擇圖表類型"
+      highlightColor="#B39DDB"
+      highlightTextColor="#FFFFFF"
+      formControlName="item"
+      (selected)="onChartSelected($event)">
+    </ng-select>
+  </div>
+
+  <div class="form-group col-xs-12">
+    <ng-select
+      [options]="axisOpts"
+      placeholder="X軸"
+      highlightColor="#B39DDB"
+      highlightTextColor="#FFFFFF"
+      formControlName="xAxis"
+      (selected)="onXAxisUpdate($event)">
+    </ng-select>
+  </div>
+
+  <div class="form-group col-xs-12">
+    <ng-select
+      [options]="axisOpts"
+      placeholder="Y軸"
+      highlightColor="#B39DDB"
+      highlightTextColor="#FFFFFF"
+      formControlName="yAxis"
+      (selected)="onYAxisUpdate($event)">
+    </ng-select>
+  </div>
+
+  <div class="form-group col-xs-12">
+    <input (change)="changeColor($event)" type="color" name="favcolor" value="#ff0000">
+  </div>
+</div>

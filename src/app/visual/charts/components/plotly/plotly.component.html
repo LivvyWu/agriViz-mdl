@@ -1,0 +1,19 @@
+<div *ngIf="!input_id" id="myPlotlyDiv"
+     name="myPlotlyDiv"
+     (window:resize)="onResize($event)"
+     style="width: 800px; height: 600px;">
+</div>
+<div *ngIf="input_id" id={{input_id}}
+  style="width: 400px; height: 400px;">
+
+</div>
+<!--<div *ngIf="displayRawData">-->
+  <!--raw data:-->
+  <!--<hr />-->
+  <!--<span>{{data | json}}</span>-->
+  <!--<hr />-->
+  <!--layout:-->
+  <!--<hr />-->
+  <!--<span>{{layout | json}}</span>-->
+  <!--<hr />-->
+<!--</div>-->

@@ -1,0 +1,22 @@
+<div class="row">
+  <div *ngFor="let dashboard of dashboardList; let i = index;" class="col-md-4">
+    <div class="card">
+      <div class="card-header">
+        {{dashboard.name}}
+        <span class="fa fa-trash-o pull-right"
+              (click)="removeDashboard(i, dashboard.id)"></span>
+      </div>
+      <div class="card-block text-center">
+        <img class="img-fluid" src="../../../../../assets/images/char.png" height="128" width="128"/>
+      </div>
+
+      <div class="card-footer text-center text-muted">
+        <p class="col align-self-center">{{dashboard.charts.length}}個Charts</p>
+        <a class="btn btn-outline-primary" routerLink="../edit/{{dashboard.id}}">
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>編輯</a>
+        <a class="btn btn-outline-primary" routerLink="../edit/{{dashboard.id}}">
+          <i class="fa fa-arrows-alt" aria-hidden="true"></i>詳細</a>
+      </div>
+    </div>
+  </div>
+</div>

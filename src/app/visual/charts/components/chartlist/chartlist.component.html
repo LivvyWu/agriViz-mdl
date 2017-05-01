@@ -1,0 +1,27 @@
+<div class="container-fluid" style="padding-top: 100px">
+  <div class="row">
+    <div *ngFor="let chart of chartlist; let i = index;" class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          {{chart.name}}
+          <span class="fa fa-trash-o pull-right"
+                (click)="removeChart(i, chart.id)"></span>
+        </div>
+        <div class="card-block">
+          <plotlychart
+            [input_id]="chart.id"
+            [input_data]="chart.data"
+            [input_layout]="chart.layout"
+            [input_options]="chart.options">
+          </plotlychart>
+        </div>
+
+        <div class="card-footer text-center text-muted">
+          <a class="btn btn-outline-primary pull-right" routerLink="../edit/{{chart.id}}"><i
+            class="fa fa-pencil-square-o" aria-hidden="true"></i>修改</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

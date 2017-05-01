@@ -1,0 +1,35 @@
+<section class="wrap container" id="login">
+  <div class="row justify-content-md-center">
+    <a href="/"><img class="img-fluid" style="max-height: 30px" src="../assets/images/agri.png"/></a>
+  </div>
+  <br>
+  <div class="row justify-content-md-center">
+    <form class="col-md-6 justify-content-md-center form-signin" role="form">
+      <div class="form-group input-lg">
+        <input [(ngModel)]="user.email" type="text" class="form-control" id="name" name="name" placeholder="帳號 *">
+      </div>
+      <div class="form-group input-lg">
+        <input [(ngModel)]="user.password" type="password" class="form-control" id="password" name="password"
+               placeholder="密碼 *">
+      </div>
+      <div class="form-group input-lg">
+        <p></p>
+      </div>
+      <div class="form-group form-inline">
+        <a class="forgot">忘記密碼?</a>
+        <input class="form-check-input d-block float-right" type="checkbox">記住我的帳號
+      </div>
+
+      <div class="form-group">
+        <button (click)="login()" class="btn btn-primary btn-block">登入</button>
+        <p class="text-center">或</p>
+        <button class="btn btn-info btn-block" routerLink="/register">立即註冊</button>
+      </div>
+    </form>
+  </div>
+  <div class="row justify-content-md-center">
+    <ul>
+      <li class="last"><a href="/">© 財團法人資訊工業策進會</a></li>
+    </ul>
+  </div>
+</section>

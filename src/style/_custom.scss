@@ -1,0 +1,62 @@
+
+// General variable structure
+// Variable format should follow the `$component-modifier-state-property` order.
+
+
+//// Colors
+//
+
+//$bgHover:   #16A085;
+//$bgDefault: #1ABC9C;
+//$colDefault  : #fff;
+//$colHover: #fff;
+//
+//// Navbar
+//
+//.navbar-default {
+//  background-color: $bgDefault;
+//  border-color: $bgHover;
+//  .navbar-brand {
+//    color: $colDefault;
+//    &:hover, &:focus {
+//      color: $colHover; }}
+//  .navbar-text {
+//    color: $colDefault; }
+//  .navbar-nav {
+//    > li {
+//      > a {
+//        color: $colDefault;
+//        &:hover,  &:focus {
+//          color: $colHover; }}}
+//    > .active {
+//      > a, > a:hover, > a:focus {
+//        color: $colHover;
+//        background-color: $bgHover; }}
+//    > .open {
+//      > a, > a:hover, > a:focus {
+//        color: $colHover;
+//        background-color: $bgHover; }}}
+//  .navbar-toggle {
+//    border-color: $bgHover;
+//    &:hover, &:focus {
+//      background-color: $bgHover; }
+//    .icon-bar {
+//      background-color: $colDefault; }}
+//  .navbar-collapse,
+//  .navbar-form {
+//    border-color: $colDefault; }
+//  .navbar-link {
+//    color: $colDefault;
+//    &:hover {
+//      color: $colHover; }}}
+//@media (max-width: 767px) {
+//  .navbar-default .navbar-nav .open .dropdown-menu {
+//    > li > a {
+//      color: $colDefault;
+//      &:hover, &:focus {
+//        color: $colHover; }}
+//    > .active {
+//      > a, > a:hover, > a:focus, {
+//        color: $colHover;
+//        background-color: $bgHover; }}}
+//}

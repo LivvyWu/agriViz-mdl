@@ -1,0 +1,46 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+          data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/">
+    <img src="../../../../assets/images/agri.png" width="80" class="d-inline-block align-top" alt="">
+  </a>
+
+  <div class="collapse navbar-collapse text-center" id="">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="/pages/dashboards">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/pages/charts">Charts</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+           aria-expanded="false">Create
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/pages/dashboards/create">Dashboard</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/pages/charts/create">Chart</a>
+        </div>
+      </li>
+      <li *ngIf="isLogin" class="nav-item dropdown navbar-toggler-right">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+           aria-expanded="false">
+          <!--<i class="fa fa-user-o" aria-hidden="true"></i>-->
+          <i class="fa fa-user-circle" aria-hidden="true"></i>{{username}}</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/pages/profile">profile</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" (click)="logout()">登出</a>
+        </div>
+      </li>
+    </ul>
+    <div class="pull-right">
+      <button *ngIf="!isLogin" type="button" class="btn btn-outline-info d-inline" routerLink="/login">登入</button>
+      <button *ngIf="!isLogin" type="button" class="btn btn-outline-info d-inline" routerLink="/login">註冊</button>
+    </div>
+  </div>
+</nav>

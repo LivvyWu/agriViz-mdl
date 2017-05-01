@@ -1,0 +1,70 @@
+<div class="container-fluid" style="padding-top: 100px">
+  <div class="row">
+    <div class="col-xs-2 col-md-2">
+      <div class="">
+        <h4><img src="../../../../../assets/images/2-filled-xl.png" height="32" width="32"/>編輯圖表</h4>
+      </div>
+      <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
+        <div class="form-group">
+          <input type="text" class="form-control" formControlName="name" placeholder="請輸入圖表名稱">
+        </div>
+        <div formArrayName="traces">
+          <div *ngFor="let trace of myForm.controls.traces.controls; let i=index" class="card">
+            <div class="card-block">
+              <a href="#" (click)="traceToggle($event, i)">
+                <i *ngIf="trace.toggle" class="fa fa-chevron-down" aria-hidden="true"></i>
+                <i *ngIf="!trace.toggle" class="fa fa-chevron-up" aria-hidden="true"></i>
+              </a>
+              <span>Trace {{i + 1}}</span>
+              <span class="fa fa-times pull-right" *ngIf="myForm.controls.traces.controls.length > 1"
+                    (click)="removeTrace(i)"></span>
+              <trace [axisOpts]="axisOpts"
+                     [index]=i
+                     [group]="myForm.controls.traces.controls[i]"
+                     [cardToggle]="!trace.toggle"
+                     (selectItemEvent)="updateChartType($event)"
+                     (xAxisValue)="updateXaxis($event)"
+                     (yAxisValue)="updateYaxis($event)"
+                     (selectedColor)="marker_color($event)">
+              </trace>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix addtrace">
+          <a (click)="addTrace()" style="cursor: default" class="btn btn-primary btn-outline-primary pull-right">
+            新增Trace
+          </a>
+        </div>
+        <div class="float-right">
+          <img class="" src="../../../../../assets/images/4-filled-xl.png" height="32" width="32"/>
+          <button class="btn btn-primary" [disabled]="!myForm.valid">儲存</button>
+        </div>
+
+      </form>
+    </div>
+    <div class="col-xs-10 col-md-10">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item align-items-center">
+          <a class="nav-link active" data-toggle="tab" href="#data" role="tab"><img
+            src="../../../../../assets/images/1-filled-xl.png" height="32" width="32"/>上傳檔案</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#chart" role="tab"><img
+            src="../../../../../assets/images/3-filled-xl.png" height="32" width="32"/>檢視圖表</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="data" role="tabpanel">
+          <app-fileupload (dataframe)="createDataframe($event)"></app-fileupload>
+        </div>
+        <div class="tab-pane" id="chart" role="tabpanel">
+          <plotlychart #myPlotly></plotlychart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
