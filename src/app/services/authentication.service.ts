@@ -3,10 +3,9 @@ import {Router} from '@angular/router';
 
 
 export class User {
-  constructor(
-    public username: string,
-    public email: string,
-    public password: string) {
+  constructor(public username: string,
+              public email: string,
+              public password: string) {
   }
 }
 
@@ -26,11 +25,12 @@ export class AuthenticationService {
     this.router.navigate(['index']);
   }
 
-  login(user) {
+  login(user: User) {
     var authenticatedUser = users.find(u => u.email === user.email);
     if (authenticatedUser && authenticatedUser.password === user.password) {
       localStorage.setItem('username', authenticatedUser.username);
-      this.router.navigate(['index']);
+      window.location.href = 'index';
+      //this.router.navigate(['index']);
       return true;
     }
     return false;

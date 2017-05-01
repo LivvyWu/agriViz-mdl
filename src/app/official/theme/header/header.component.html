@@ -1,4 +1,3 @@
-
 <!-- Always shows a header, even in smaller screens. -->
 <div mdl class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
@@ -19,7 +18,7 @@
            class="mdl-navigation__link">應用服務
         </a>
 
-        <ul class="mdl-menu mdl-menu--bottom-left  mdl-js-menu" for="appMenu">
+        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="appMenu">
           <li class="mdl-navigation__link"><a href="#">APIs</a></li>
           <li *ngIf="!isLogin" class="mdl-navigation__link"><a routerLink="/login">視覺化工具</a></li>
         </ul>
@@ -29,12 +28,14 @@
           <i class="material-icons">&#xE853;</i>{{username}}
         </a>
         <ul *ngIf="isLogin" class="mdl-menu mdl-menu--bottom-right  mdl-js-menu" for="menu">
-          <li class="mdl-navigation__link"><a href="#" >profile</a></li>
+          <li class="mdl-navigation__link"><a href="#">profile</a></li>
           <li class="mdl-navigation__link"><a href="#" (click)="logout()">登出</a></li>
         </ul>
 
-        <a *ngIf="!isLogin" class="mdl-navigation__link" routerLink="/login">登入</a>
+
+        <a *ngIf="!isLogin" class="mdl-navigation__link" type="button" routerLink="/login">登入</a>
         <a *ngIf="!isLogin" class="mdl-navigation__link" routerLink="/register">註冊</a>
+
 
       </nav>
     </div>

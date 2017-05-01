@@ -10,12 +10,14 @@ import {VisualModule} from './visual/visual.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppComponent} from './app.component';
 import {OfficialModule} from './official/official.module';
-import {MDL} from './directive/MaterialDesignLiteUpgradeElement';
+import {MDLDirective} from './directive/MaterialDesignLiteUpgradeElement';
+import {LoginComponent} from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MDL
+    MDLDirective,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

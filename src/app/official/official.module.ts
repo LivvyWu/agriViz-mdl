@@ -4,8 +4,6 @@ import {routing} from './official.routes';
 import {ThemeModule} from './theme/theme.module';
 import {FormsModule} from '@angular/forms';
 import {OfficialComponent} from './official.component';
-import {LoginComponent} from './login/login.component';
-import {RegisterComponent} from './register/register.component';
 
 @NgModule({
   imports: [
@@ -15,9 +13,7 @@ import {RegisterComponent} from './register/register.component';
     ThemeModule
   ],
   declarations: [
-    OfficialComponent,
-    LoginComponent,
-    RegisterComponent
+    OfficialComponent
   ]
 })
 export class OfficialModule {
